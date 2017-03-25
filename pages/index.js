@@ -4,8 +4,9 @@ import db from '../util/db'
 import withEvents from '../util/with-events.js'
 import Head from 'next/head'
 import List from '../layout/list';
+import ListUser from '../layout/list-user';
 
-export default withEvents(({accidents}) => (
+export default withEvents(({accidents, users}) => (
   <div className="main min-h-100">
     <Head>
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
@@ -20,7 +21,8 @@ export default withEvents(({accidents}) => (
     <h2>Accidents</h2>
     <List accidents={accidents}/>
 
-    <h2>Events</h2>
+    <h2>Available Drivers</h2>
+    <ListUser users={users}/>
 
     <h2>Helmet events</h2>
   </main>

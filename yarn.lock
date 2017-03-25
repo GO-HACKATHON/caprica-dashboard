@@ -2216,6 +2216,12 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-gmaps@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-gmaps/-/react-gmaps-1.5.0.tgz#82dabca0e9e3ce361f4f09008119ceb7431d09a5"
+  dependencies:
+    object-assign "^4.0.1"
+
 react-hot-loader@3.0.0-beta.6:
   version "3.0.0-beta.6"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-3.0.0-beta.6.tgz#463fac0bfc8b63a8385258af20c91636abce75f4"
