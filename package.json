@@ -1,0 +1,19 @@
+{
+  "name": "caprica-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GO-HACKATHON/caprica-dashboard",
+  "author": "Muhammad Mustadi <muhammad.mustadi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^3.7.3",
+    "next": "^1.2.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "npm run build && next start -p $PORT"
+  }
+}
