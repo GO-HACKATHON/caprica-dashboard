@@ -5,8 +5,9 @@ import withEvents from '../util/with-events.js'
 import Head from 'next/head'
 import List from '../layout/list';
 import ListUser from '../layout/list-user';
+import ListWarning from '../layout/list-warning';
 
-export default withEvents(({accidents, users}) => (
+export default withEvents(({accidents, users, warnings}) => (
   <div className="main min-h-100">
     <Head>
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
@@ -24,7 +25,8 @@ export default withEvents(({accidents, users}) => (
     <h2>Available Drivers</h2>
     <ListUser users={users}/>
 
-    <h2>Speed Warning</h2>
+    <h2>Recent Speed Warning</h2>
+    <ListWarning warnings={warnings}/>
   </main>
   <style jsx>{
     `

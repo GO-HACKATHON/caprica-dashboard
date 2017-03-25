@@ -14,9 +14,14 @@ const withEvents = (fn) => (
       const usersVal = users.val()
       const listOfUsers = Object.keys(usersVal).map(key => usersVal[key]).sort((a, b) => b.created_at - a.created_at)
 
+      const warnings = await db.ref('warnings').once('value')
+      const warningsVal = warnings.val()
+      const listOfWarnings = Object.keys(warningsVal).map(key => warningsVal[key]).sort((a, b) => b.created_at - a.created_at)
+
       return {
         accidents: listOfAccidents,
-        users: listOfUsers 
+        users: listOfUsers,
+        warnings: listOfWarnings
       }
     }
 
@@ -25,16 +30,19 @@ const withEvents = (fn) => (
       this.state = Object.assign({}, props)
       this.onUpdateAccident = this.onUpdateAccident.bind(this)
       this.onUpdateUser = this.onUpdateUser.bind(this)
+      this.onUpdateWarning = this.onUpdateWarning.bind(this)
     }
 
     componentDidMount () {
       db.ref('accidents').on('value', this.onUpdateAccident)
       db.ref('users').on('value', this.onUpdateUser)
+      db.ref('warnings').on('value', this.onUpdateWarning)
     }
 
     componentWillUnmount () {
       db.ref('accidents').off('value', this.onUpdateAccident)
       db.ref('users').off('value', this.onUpdateUser)
+      db.ref('warnings').off('value', this.onUpdateWarning)
     }
 
     onUpdateAccident (accidents) {
@@ -47,6 +55,12 @@ const withEvents = (fn) => (
       const usersVal = users.val()
       const listOfUsers = Object.keys(usersVal).map(key => usersVal[key]).sort((a, b) => b.created_at - a.created_at)
       this.setState({ users: listOfUsers })
+    }
+
+    onUpdateWarning (warnings) {
+      const warningsVal = warnings.val()
+      const listOfWarnings = Object.keys(warningsVal).map(key => warningsVal[key]).sort((a, b) => b.created_at - a.created_at)
+      this.setState({ warnings: listOfWarnings })
     }
 
     render () {
