@@ -15,5 +15,8 @@
     "dev": "next",
     "build": "next build",
     "start": "npm run build && next start -p $PORT"
+  },
+  "devDependencies": {
+    "tachyons": "^4.6.2"
   }
 }
