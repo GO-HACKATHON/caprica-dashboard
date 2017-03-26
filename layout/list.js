@@ -8,7 +8,7 @@ const coords = {
   lng: -0.08040660000006028
 };
 
-const params = {v: '3.exp', key: 'AIzaSyBX4W6HyLqGzuGrGjKnQUxqh4axU1nFMLg'};
+const params = {v: '3.exp', key: process.env.GMAPS_API_KEY};
 
 const List = ({accidents}) => {
   return (
