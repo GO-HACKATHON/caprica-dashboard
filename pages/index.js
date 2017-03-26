@@ -17,7 +17,7 @@ export default withEvents(({accidents, users, warnings}) => (
     </Head>
 
     <main className="mw7 center black-80 ph4 pv5 min-h-100">
-    <h1>Caprica Dashboard</h1>
+    <h1>Caprica Dashboard 🌏</h1>
     <h2>Recent Accidents</h2>
     <List accidents={accidents}/>
 
