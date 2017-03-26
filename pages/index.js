@@ -13,7 +13,7 @@ export default withEvents(({accidents, users, warnings}) => (
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta charSet='utf-8' />
       <link rel="stylesheet" href="/static/tachyons.min.css"/>
-      <title>Caprica Dashboard</title>
+      <title>Caprica Dashboard 🌏</title>
     </Head>
 
     <main className="mw7 center black-80 ph4 pv5 min-h-100">
