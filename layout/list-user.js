@@ -6,7 +6,7 @@ const ListUser = ({users}) => {
 
     {
       users.map(({name, is_connected: available, created_at: time}, idx) => {
-        const hashed = hash(name)
+        const hashed = hash(idx)
         
         if (available) {
           return (
