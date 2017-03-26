@@ -1,4 +1,4 @@
-# Caprica Server
+# Caprica Dashboard
 
 > A dashboard for Caprica Systems to monitor everything
 
@@ -12,6 +12,12 @@ $ yarn dev
 $ npm dev
 ```
 
+# Deployment
+
+```sh
+$ yarn run build && PORT={PORT HERE} yarn start
+```
+
 # Pre-requisites
 
 Create your own GMaps API Key (here)[https://developers.google.com/maps/documentation/javascript/get-api-key
@@ -23,9 +29,6 @@ $ yarn
 $ npm install
 ```
 
-# APIs
-
-WIP.
 
 # License
 
