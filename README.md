@@ -2,6 +2,8 @@
 
 > A dashboard for Caprica Systems to monitor everything
 
+<img src="/dashboard.gif" />
+
 # Usage
 
 ```sh

@@ -1,6 +1,5 @@
 import {Component, PropTypes} from 'react'
 import db from '../util/db'
-// import withHighscore from '../util/with-highscore'
 import withEvents from '../util/with-events.js'
 import Head from 'next/head'
 import List from '../layout/list';
