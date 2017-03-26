@@ -6,11 +6,14 @@
   "author": "Muhammad Mustadi <muhammad.mustadi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.2.0",
+    "axios": "^0.15.3",
     "firebase": "^3.7.3",
     "next": "^1.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-gmaps": "^1.5.0"
+    "react-gmaps": "^1.5.0",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "dev": "next",

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import hash from '../util/hashUserId';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps'
+import _ from 'underscore'
 
 const coords = {
   lat: 51.5258541,
@@ -14,26 +15,30 @@ const List = ({accidents}) => {
     <div>
 
     {
-      accidents.map(({user_id: userId, latitude, longitude, speed, created_at: time}, idx) => {
-        const hashed = hash(userId)
+      accidents.map(({user_id: userId, latitude, longitude, speed, created_at: time, nearby_drivers: nearbyDrivers}, idx) => {
+        const hashed = hash(Math.random().toString(36).substring(7))
+
+        const InfoWindows = _.map(nearbyDrivers, function (nearbyDriver, index) {
+          console.log(nearbyDriver)
+
+          return (
+            <InfoWindow
+              lat={latitude}
+              lng={longitude}
+              content={'Driver {index}'}/>
+          )
+        })          
 
         const maps = idx < 2 ? (
           <Gmaps
-              width={'400px'}
-              height={'300px'}
+              width={'800px'}
+              height={'600px'}
               lat={latitude}
               lng={longitude}
               zoom={15}
               loadingMessage={'Be happy'}
               params={params}>
-              <InfoWindow
-                lat={latitude}
-                lng={longitude}
-                content={'Hello, React :)'}/>
-              <InfoWindow
-                lat={latitude}
-                lng={longitude}
-                content={'Ahmadd :)'}/>
+              {InfoWindows}
             </Gmaps>
         ) : ''
 
